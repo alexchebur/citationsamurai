@@ -104,6 +104,7 @@ gdjs.Game_32windowCode.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.scene
 }if (gdjs.Game_32windowCode.condition0IsTrue_0.val) {
 gdjs.copyArray(runtimeScene.getObjects("Alarm"), gdjs.Game_32windowCode.GDAlarmObjects1);
 gdjs.copyArray(runtimeScene.getObjects("Label"), gdjs.Game_32windowCode.GDLabelObjects1);
+gdjs.copyArray(runtimeScene.getObjects("SpeedLabel"), gdjs.Game_32windowCode.GDSpeedLabelObjects1);
 gdjs.copyArray(runtimeScene.getObjects("birds"), gdjs.Game_32windowCode.GDbirdsObjects1);
 gdjs.copyArray(runtimeScene.getObjects("player"), gdjs.Game_32windowCode.GDplayerObjects1);
 gdjs.copyArray(runtimeScene.getObjects("scroll"), gdjs.Game_32windowCode.GDscrollObjects1);
@@ -178,6 +179,9 @@ gdjs.copyArray(runtimeScene.getObjects("scroll"), gdjs.Game_32windowCode.GDscrol
 }
 }{runtimeScene.getVariables().get("ScrollsLeft").setNumber(20);
 }{gdjs.evtTools.runtimeScene.pauseTimer(runtimeScene, "countdown");
+}{for(var i = 0, len = gdjs.Game_32windowCode.GDSpeedLabelObjects1.length ;i < len;++i) {
+    gdjs.Game_32windowCode.GDSpeedLabelObjects1[i].hide();
+}
 }}
 
 }
