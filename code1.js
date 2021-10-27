@@ -394,7 +394,7 @@ gdjs.copyArray(runtimeScene.getObjects("ScrollNumber"), gdjs.Game_32windowCode.G
 gdjs.copyArray(runtimeScene.getObjects("SpeedLabel"), gdjs.Game_32windowCode.GDSpeedLabelObjects1);
 gdjs.copyArray(runtimeScene.getObjects("scroll"), gdjs.Game_32windowCode.GDscrollObjects1);
 {for(var i = 0, len = gdjs.Game_32windowCode.GDLabelObjects1.length ;i < len;++i) {
-    gdjs.Game_32windowCode.GDLabelObjects1[i].putAroundObject((gdjs.Game_32windowCode.GDscrollObjects1.length !== 0 ? gdjs.Game_32windowCode.GDscrollObjects1[0] : null), -(10), 0);
+    gdjs.Game_32windowCode.GDLabelObjects1[i].putAroundObject((gdjs.Game_32windowCode.GDscrollObjects1.length !== 0 ? gdjs.Game_32windowCode.GDscrollObjects1[0] : null), 0, 0);
 }
 }{for(var i = 0, len = gdjs.Game_32windowCode.GDSpeedLabelObjects1.length ;i < len;++i) {
     gdjs.Game_32windowCode.GDSpeedLabelObjects1[i].setString(gdjs.evtTools.variable.getVariableString(runtimeScene.getVariables().getFromIndex(3)));
@@ -431,7 +431,7 @@ gdjs.Game_32windowCode.condition0IsTrue_0.val = false;
 gdjs.Game_32windowCode.condition1IsTrue_0.val = false;
 {
 for(var i = 0, k = 0, l = gdjs.Game_32windowCode.GDscrollObjects1.length;i<l;++i) {
-    if ( gdjs.Game_32windowCode.GDscrollObjects1[i].getY() <= -(85) ) {
+    if ( gdjs.Game_32windowCode.GDscrollObjects1[i].getY() <= -(90) ) {
         gdjs.Game_32windowCode.condition0IsTrue_0.val = true;
         gdjs.Game_32windowCode.GDscrollObjects1[k] = gdjs.Game_32windowCode.GDscrollObjects1[i];
         ++k;
@@ -478,7 +478,7 @@ gdjs.Game_32windowCode.condition0IsTrue_0.val = false;
 gdjs.Game_32windowCode.condition1IsTrue_0.val = false;
 {
 for(var i = 0, k = 0, l = gdjs.Game_32windowCode.GDscrollObjects1.length;i<l;++i) {
-    if ( gdjs.Game_32windowCode.GDscrollObjects1[i].getY() <= -(85) ) {
+    if ( gdjs.Game_32windowCode.GDscrollObjects1[i].getY() <= -(90) ) {
         gdjs.Game_32windowCode.condition0IsTrue_0.val = true;
         gdjs.Game_32windowCode.GDscrollObjects1[k] = gdjs.Game_32windowCode.GDscrollObjects1[i];
         ++k;
