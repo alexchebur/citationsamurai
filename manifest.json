@@ -1,0 +1,21 @@
+{
+  name Samurai Citation San,
+  short_name Citation San,
+  start_url index.html,
+  scope .,
+  icons [
+    {
+      src icon-samurai_small.png,
+      sizes 192x192,
+      type imagepng
+    },
+    {
+      src icon-samurai.png,
+      sizes 512x512,
+      type imagepng
+    }
+  ],
+  theme_color #ffd31d,
+  background_color #333,
+  display standalone
+}
