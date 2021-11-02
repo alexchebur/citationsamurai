@@ -39,3 +39,11 @@
   }
  ]
 }
+{
+  "name": "Citation Samurai",
+  "short_name": "CS",
+  "lang": "ru",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "landscape"
+}
