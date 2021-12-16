@@ -1,5 +1,6 @@
 var gdjs;
 (function(gdjs2) {
+  const logger = new gdjs2.Logger("Scene manager");
   class RuntimeScene {
     constructor(runtimeGame) {
       this._eventsFunction = null;
@@ -53,7 +54,7 @@ var gdjs;
     }
     loadFromScene(sceneData) {
       if (!sceneData) {
-        console.error("loadFromScene was called without a scene");
+        logger.error("loadFromScene was called without a scene");
         return;
       }
       if (this._isLoaded) {
@@ -111,7 +112,7 @@ var gdjs;
     }
     updateObject(objectData) {
       if (!this.isObjectRegistered(objectData.name)) {
-        console.warn("Tried to call updateObject for an object that was not registered (" + objectData.name + "). Call registerObject first.");
+        logger.warn("Tried to call updateObject for an object that was not registered (" + objectData.name + "). Call registerObject first.");
       }
       this._objects.put(objectData.name, objectData);
     }
@@ -217,7 +218,7 @@ var gdjs;
       if (module && module.func) {
         this._eventsFunction = module.func;
       } else {
-        console.log("Warning: no function found for running logic of scene " + this._name);
+        logger.warn("No function found for running logic of scene " + this._name);
         this._eventsFunction = function() {
         };
       }
@@ -459,7 +460,7 @@ var gdjs;
     }
     getObjects(name) {
       if (!this._instances.containsKey(name)) {
-        console.log('RuntimeScene.getObjects: No instances called "' + name + '"! Adding it.');
+        logger.info('RuntimeScene.getObjects: No instances called "' + name + '"! Adding it.');
         this._instances.put(name, []);
       }
       return this._instances.get(name);
@@ -518,7 +519,7 @@ var gdjs;
       if (behaviorSharedData) {
         return behaviorSharedData;
       }
-      console.error("Can't find shared data for behavior with name:", name);
+      logger.error("Can't find shared data for behavior with name: " + name);
       return null;
     }
     setInitialSharedDataForBehavior(name, sharedData) {

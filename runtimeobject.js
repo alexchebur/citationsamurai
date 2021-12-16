@@ -99,6 +99,10 @@ var gdjs;
         this._behaviorsTable.put(behaviorData.name, this._behaviors[i]);
       }
       this._behaviors.length = i;
+      for (let i2 = 0; i2 < objectData.effects.length; ++i2) {
+        this._runtimeScene.getGame().getEffectsManager().initializeEffect(objectData.effects[i2], this._rendererEffects, this);
+        this.updateAllEffectParameters(objectData.effects[i2]);
+      }
       this._timers.clear();
     }
     getElapsedTime(runtimeScene) {
@@ -132,6 +136,7 @@ var gdjs;
       for (let j = 0, lenj = this._behaviors.length; j < lenj; ++j) {
         this._behaviors[j].onDestroy();
       }
+      this.clearEffects();
     }
     getRendererObject() {
       return void 0;
@@ -280,6 +285,10 @@ var gdjs;
     }
     removeEffect(effectName) {
       return this._runtimeScene.getGame().getEffectsManager().removeEffect(this._rendererEffects, this.getRendererObject(), effectName);
+    }
+    clearEffects() {
+      this._rendererEffects = {};
+      return this._runtimeScene.getGame().getEffectsManager().clearEffects(this.getRendererObject());
     }
     setEffectDoubleParameter(name, parameterName, value) {
       return this._runtimeScene.getGame().getEffectsManager().setEffectDoubleParameter(this._rendererEffects, name, parameterName, value);

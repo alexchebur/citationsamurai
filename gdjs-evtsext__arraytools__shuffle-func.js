@@ -4,7 +4,7 @@ gdjs.evtsExt__ArrayTools__Shuffle.conditionTrue_0 = {val:false};
 gdjs.evtsExt__ArrayTools__Shuffle.condition0IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__ArrayTools__Shuffle.userFunc0x8cf548 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__ArrayTools__Shuffle.userFunc0x876b18 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 const arr = runtimeScene.getVariables().get(eventsFunctionContext.getArgument("arr"));
 // Cast to array to ensure getAllChildrenArray returns the real array
@@ -18,7 +18,7 @@ gdjs.evtsExt__ArrayTools__Shuffle.eventsList0 = function(runtimeScene, eventsFun
 {
 
 
-gdjs.evtsExt__ArrayTools__Shuffle.userFunc0x8cf548(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__ArrayTools__Shuffle.userFunc0x876b18(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

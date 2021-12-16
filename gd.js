@@ -1,5 +1,6 @@
 var gdjs;
 (function(gdjs2) {
+  const logger = new gdjs2.Logger("Engine runtime");
   let evtTools;
   (function(evtTools2) {
     const thisIsUnusedButEnsureTheNamespaceIsDeclared = true;
@@ -110,7 +111,7 @@ var gdjs;
     gdjs2.callbacksObjectDeletedFromScene.push(callback);
   };
   gdjs2.registerGlobalCallbacks = function() {
-    console.warn("You're calling gdjs.registerGlobalCallbacks. This method is now useless and you must not call it anymore.");
+    logger.warn("You're calling gdjs.registerGlobalCallbacks. This method is now useless and you must not call it anymore.");
   };
   gdjs2.clearGlobalCallbacks = function() {
     gdjs2.callbacksFirstRuntimeSceneLoaded.length = 0;
@@ -126,13 +127,13 @@ var gdjs;
   gdjs2.getObjectConstructor = function(name) {
     if (name !== void 0 && gdjs2.objectsTypes.containsKey(name))
       return gdjs2.objectsTypes.get(name);
-    console.warn('Object type "' + name + '" was not found.');
+    logger.warn('Object type "' + name + '" was not found.');
     return gdjs2.objectsTypes.get("");
   };
   gdjs2.getBehaviorConstructor = function(name) {
     if (name !== void 0 && gdjs2.behaviorsTypes.containsKey(name))
       return gdjs2.behaviorsTypes.get(name);
-    console.warn('Behavior type "' + name + '" was not found.');
+    logger.warn('Behavior type "' + name + '" was not found.');
     return gdjs2.behaviorsTypes.get("");
   };
   gdjs2.staticArray = function(owner) {

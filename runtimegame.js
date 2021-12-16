@@ -1,5 +1,6 @@
 var gdjs;
 (function(gdjs2) {
+  const logger = new gdjs2.Logger("Game manager");
   class RuntimeGame {
     constructor(data, options) {
       this._notifyScenesForGameResolutionResize = false;
@@ -83,7 +84,7 @@ var gdjs;
         }
       }
       if (scene === null) {
-        console.warn('The game has no scene called "' + sceneName + '"');
+        logger.error('The game has no scene called "' + sceneName + '"');
       }
       return scene;
     }
@@ -218,38 +219,43 @@ var gdjs;
       });
     }
     startGameLoop() {
-      if (!this.hasScene()) {
-        console.log("The game has no scene.");
-        return;
+      try {
+        if (!this.hasScene()) {
+          logger.error("The game has no scene.");
+          return;
+        }
+        this._forceGameResolutionUpdate();
+        const firstSceneName = this._data.firstLayout;
+        this._sceneStack.push(this.hasScene(firstSceneName) ? firstSceneName : this.getSceneData().name, this._injectExternalLayout);
+        const that = this;
+        let accumulatedElapsedTime = 0;
+        this._renderer.startGameLoop(function(lastCallElapsedTime) {
+          if (that._paused) {
+            return true;
+          }
+          accumulatedElapsedTime += lastCallElapsedTime;
+          if (that._maxFPS > 0 && 1e3 / accumulatedElapsedTime > that._maxFPS + 7) {
+            return true;
+          }
+          const elapsedTime = accumulatedElapsedTime;
+          accumulatedElapsedTime = 0;
+          if (that._notifyScenesForGameResolutionResize) {
+            that._sceneStack.onGameResolutionResized();
+            that._notifyScenesForGameResolutionResize = false;
+          }
+          if (that._sceneStack.step(elapsedTime)) {
+            that.getInputManager().onFrameEnded();
+            return true;
+          }
+          return false;
+        });
+        setTimeout(() => {
+          this._setupSessionMetrics();
+        }, 1e4);
+      } catch (e) {
+        logger.error("Internal crash: " + e);
+        throw e;
       }
-      this._forceGameResolutionUpdate();
-      const firstSceneName = this._data.firstLayout;
-      this._sceneStack.push(this.hasScene(firstSceneName) ? firstSceneName : this.getSceneData().name, this._injectExternalLayout);
-      const that = this;
-      let accumulatedElapsedTime = 0;
-      this._renderer.startGameLoop(function(lastCallElapsedTime) {
-        if (that._paused) {
-          return true;
-        }
-        accumulatedElapsedTime += lastCallElapsedTime;
-        if (that._maxFPS > 0 && 1e3 / accumulatedElapsedTime > that._maxFPS + 7) {
-          return true;
-        }
-        const elapsedTime = accumulatedElapsedTime;
-        accumulatedElapsedTime = 0;
-        if (that._notifyScenesForGameResolutionResize) {
-          that._sceneStack.onGameResolutionResized();
-          that._notifyScenesForGameResolutionResize = false;
-        }
-        if (that._sceneStack.step(elapsedTime)) {
-          that.getInputManager().onFrameEnded();
-          return true;
-        }
-        return false;
-      });
-      setTimeout(() => {
-        this._setupSessionMetrics();
-      }, 1e4);
     }
     enableMetrics(enable) {
       this._disableMetrics = !enable;
@@ -296,6 +302,12 @@ var gdjs;
             hasTouch: typeof navigator !== "undefined" ? !!navigator.maxTouchPoints && navigator.maxTouchPoints > 2 : false
           }
         })
+      }).then((response) => {
+        if (!response.ok) {
+          console.error("Error while creating the session", response);
+          throw new Error("Error while creating the session");
+        }
+        return response;
       }).then((response) => response.text()).then((returnedSessionId) => {
         sessionId = returnedSessionId;
       }).catch(() => {

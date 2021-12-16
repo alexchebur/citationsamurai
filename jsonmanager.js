@@ -1,5 +1,6 @@
 var gdjs;
 (function(gdjs2) {
+  const logger = new gdjs2.Logger("JSON Manager");
   class JsonManager {
     constructor(resources) {
       this._loadedJsons = {};
@@ -19,7 +20,7 @@ var gdjs;
       let loaded = 0;
       const onLoad = function(error) {
         if (error) {
-          console.error("Error while preloading a json resource:" + error);
+          logger.error("Error while preloading a json resource:" + error);
         }
         loaded++;
         if (loaded === jsonResources.length) {

@@ -1,5 +1,6 @@
 var gdjs;
 (function(gdjs2) {
+  const logger = new gdjs2.Logger("Scene stack");
   class SceneStack {
     constructor(runtimeGame) {
       this._stack = [];
@@ -33,7 +34,7 @@ var gdjs;
         } else if (request === gdjs2.SceneChangeRequest.CLEAR_SCENES) {
           this.replace(currentScene.getRequestedScene(), true);
         } else {
-          console.error("Unrecognized change in scene stack.");
+          logger.error("Unrecognized change in scene stack: " + request);
           return false;
         }
       }
