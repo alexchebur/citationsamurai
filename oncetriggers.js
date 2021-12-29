@@ -1,26 +1,2 @@
-var gdjs;
-(function(gdjs2) {
-  class OnceTriggers {
-    constructor() {
-      this._onceTriggers = {};
-      this._lastFrameOnceTrigger = {};
-    }
-    startNewFrame() {
-      for (const k in this._lastFrameOnceTrigger)
-        if (this._lastFrameOnceTrigger.hasOwnProperty(k))
-          delete this._lastFrameOnceTrigger[k];
-      for (const k in this._onceTriggers) {
-        if (this._onceTriggers.hasOwnProperty(k)) {
-          this._lastFrameOnceTrigger[k] = this._onceTriggers[k];
-          delete this._onceTriggers[k];
-        }
-      }
-    }
-    triggerOnce(triggerId) {
-      this._onceTriggers[triggerId] = true;
-      return !this._lastFrameOnceTrigger.hasOwnProperty(triggerId);
-    }
-  }
-  gdjs2.OnceTriggers = OnceTriggers;
-})(gdjs || (gdjs = {}));
+var gdjs;(function(i){class r{constructor(){this._onceTriggers={};this._lastFrameOnceTrigger={}}startNewFrame(){for(const e in this._lastFrameOnceTrigger)this._lastFrameOnceTrigger.hasOwnProperty(e)&&delete this._lastFrameOnceTrigger[e];for(const e in this._onceTriggers)this._onceTriggers.hasOwnProperty(e)&&(this._lastFrameOnceTrigger[e]=this._onceTriggers[e],delete this._onceTriggers[e])}triggerOnce(e){return this._onceTriggers[e]=!0,!this._lastFrameOnceTrigger.hasOwnProperty(e)}}i.OnceTriggers=r})(gdjs||(gdjs={}));
 //# sourceMappingURL=oncetriggers.js.map

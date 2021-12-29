@@ -167,10 +167,22 @@ gdjs.copyArray(runtimeScene.getObjects("scroll"), gdjs.Game_32windowCode.GDscrol
 }{gdjs.evtTools.variable.valuePush(runtimeScene.getVariables().getFromIndex(2), "Лучшие книги, понял он, говорят тебе то, что ты уже сам знаешь.");
 }{gdjs.evtTools.variable.valuePush(runtimeScene.getVariables().getFromIndex(2), "Многословие легко переходит в пустословие. Возьмем такой пример: «Наш командир еще за 15 минут до своей смерти был жив».");
 }{gdjs.evtTools.variable.valuePush(runtimeScene.getVariables().getFromIndex(2), "Говори так, чтобы тебя нельзя было не понять.");
+}{gdjs.evtTools.variable.valuePush(runtimeScene.getVariables().getFromIndex(2), "Старики почти всегда воображали (и воображают сейчас), будто их дети и внуки (особенно внуки) уродуют правильную русскую речь.");
+}{gdjs.evtTools.variable.valuePush(runtimeScene.getVariables().getFromIndex(2), "Русский язык вообще тяготеет к склонению несклоняемых слов.");
+}{gdjs.evtTools.variable.valuePush(runtimeScene.getVariables().getFromIndex(2), "Лексика каждой эпохи изменчива, и ее невозможно навязывать позднейшим поколениям.");
+}{gdjs.evtTools.variable.valuePush(runtimeScene.getVariables().getFromIndex(2), "В нашей стране уже растет поколение, которое даже не слыхало о том, что в жизни бывают спутники, не имеющие отношения к космосу.");
+}{gdjs.evtTools.variable.valuePush(runtimeScene.getVariables().getFromIndex(2), "Чуть только дело дойдет до вопроса о том, не портится ли русский язык, не засоряется ли он такими словами, которые губят его красоту, самые спокойные люди вдруг начинают выходить из себя.");
+}{gdjs.evtTools.variable.valuePush(runtimeScene.getVariables().getFromIndex(2), "Это борьба не против слова, а против того, что за ним: против душевной пустоты, против попытки заткнуть словом прорехи мысли и совести.");
+}{gdjs.evtTools.variable.valuePush(runtimeScene.getVariables().getFromIndex(2), "Крестьяне деревни Акуловки, прочтя в газете фразу: “Пуанкаре терпит фиаско”, решили, что Фиаско — большая персона, недаром даже французский президент его “терпит”.");
+}{gdjs.evtTools.variable.valuePush(runtimeScene.getVariables().getFromIndex(2), "Абсолютные принципы нашей рефлексии довели нас до френетического состояния, иллюзируя обыкновенную субстанциональность и простую реальность силою реактивного идеализирования с устранением изолирования предметов.");
+}{gdjs.evtTools.variable.valuePush(runtimeScene.getVariables().getFromIndex(2), "Какое бы ни было слово, свое или чужое, лишь бы выражало заключенную в нем мысль, — и, если чужое лучше выражает ее, чем свое, давайте чужое, а свое несите в кладовую старого хлама.");
+}{gdjs.evtTools.variable.valuePush(runtimeScene.getVariables().getFromIndex(2), "Говорить с крестьянами не по-книжному, а на понятном мужику языке.");
+}{gdjs.evtTools.variable.valuePush(runtimeScene.getVariables().getFromIndex(2), "Для масс надо писать без таких новых терминов, кои требуют особого объяснения.");
+}{gdjs.evtTools.variable.valuePush(runtimeScene.getVariables().getFromIndex(2), "Истинный вкус состоит не в безотчетном отвержении такого-то слова, такого-то оборота, но в чувстве соразмерности и сообразности.");
 }{gdjs.evtsExt__ArrayTools__Shuffle.func(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getVariables().getFromIndex(1)), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }{gdjs.evtsExt__ArrayTools__Shuffle.func(runtimeScene, gdjs.evtTools.variable.getVariableString(runtimeScene.getVariables().getFromIndex(2)), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }{for(var i = 0, len = gdjs.Game_32windowCode.GDLabelObjects1.length ;i < len;++i) {
-    gdjs.Game_32windowCode.GDLabelObjects1[i].returnVariable(gdjs.Game_32windowCode.GDLabelObjects1[i].getVariables().getFromIndex(0)).setString(gdjs.evtTools.variable.getVariableString(runtimeScene.getVariables().getFromIndex(1).getChild(gdjs.randomInRange(0, 9))));
+    gdjs.Game_32windowCode.GDLabelObjects1[i].returnVariable(gdjs.Game_32windowCode.GDLabelObjects1[i].getVariables().getFromIndex(0)).setString(gdjs.evtTools.variable.getVariableString(runtimeScene.getVariables().getFromIndex(1).getChild(gdjs.randomInRange(0, 1))));
 }
 }{for(var i = 0, len = gdjs.Game_32windowCode.GDLabelObjects1.length ;i < len;++i) {
     gdjs.Game_32windowCode.GDLabelObjects1[i].setString((gdjs.RuntimeObject.getVariableString(gdjs.Game_32windowCode.GDLabelObjects1[i].getVariables().getFromIndex(0))));
@@ -312,7 +324,7 @@ gdjs.Game_32windowCode.conditionTrue_1.val = true && gdjs.Game_32windowCode.cond
 }if ( gdjs.Game_32windowCode.condition1IsTrue_0.val ) {
 {
 {gdjs.Game_32windowCode.conditionTrue_1 = gdjs.Game_32windowCode.condition2IsTrue_0;
-gdjs.Game_32windowCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(9196284);
+gdjs.Game_32windowCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(9415148);
 }
 }}
 }
@@ -391,7 +403,7 @@ gdjs.copyArray(runtimeScene.getObjects("lives"), gdjs.Game_32windowCode.GDlivesO
     gdjs.Game_32windowCode.GDscrollObjects1[i].addPolarForce(90, gdjs.evtTools.variable.getVariableNumber(runtimeScene.getVariables().getFromIndex(0)), 1);
 }
 }{for(var i = 0, len = gdjs.Game_32windowCode.GDLabelObjects1.length ;i < len;++i) {
-    gdjs.Game_32windowCode.GDLabelObjects1[i].returnVariable(gdjs.Game_32windowCode.GDLabelObjects1[i].getVariables().getFromIndex(0)).setString(gdjs.evtTools.variable.getVariableString(runtimeScene.getVariables().getFromIndex(2).getChild(gdjs.randomInRange(0, 19))));
+    gdjs.Game_32windowCode.GDLabelObjects1[i].returnVariable(gdjs.Game_32windowCode.GDLabelObjects1[i].getVariables().getFromIndex(0)).setString(gdjs.evtTools.variable.getVariableString(runtimeScene.getVariables().getFromIndex(2).getChild(gdjs.randomInRange(0, 31))));
 }
 }{for(var i = 0, len = gdjs.Game_32windowCode.GDLabelObjects1.length ;i < len;++i) {
     gdjs.Game_32windowCode.GDLabelObjects1[i].setString((gdjs.RuntimeObject.getVariableString(gdjs.Game_32windowCode.GDLabelObjects1[i].getVariables().getFromIndex(0))));
@@ -430,7 +442,7 @@ gdjs.Game_32windowCode.GDscrollObjects1.length = k;}if (gdjs.Game_32windowCode.c
 gdjs.copyArray(runtimeScene.getObjects("Label"), gdjs.Game_32windowCode.GDLabelObjects1);
 /* Reuse gdjs.Game_32windowCode.GDscrollObjects1 */
 {for(var i = 0, len = gdjs.Game_32windowCode.GDscrollObjects1.length ;i < len;++i) {
-    gdjs.Game_32windowCode.GDscrollObjects1[i].setY(-(100));
+    gdjs.Game_32windowCode.GDscrollObjects1[i].setY(-(140));
 }
 }{for(var i = 0, len = gdjs.Game_32windowCode.GDscrollObjects1.length ;i < len;++i) {
     gdjs.Game_32windowCode.GDscrollObjects1[i].setAnimation(0);
@@ -443,7 +455,7 @@ gdjs.copyArray(runtimeScene.getObjects("Label"), gdjs.Game_32windowCode.GDLabelO
     gdjs.Game_32windowCode.GDscrollObjects1[i].addPolarForce(90, gdjs.evtTools.variable.getVariableNumber(runtimeScene.getVariables().getFromIndex(0)), 1);
 }
 }{for(var i = 0, len = gdjs.Game_32windowCode.GDLabelObjects1.length ;i < len;++i) {
-    gdjs.Game_32windowCode.GDLabelObjects1[i].returnVariable(gdjs.Game_32windowCode.GDLabelObjects1[i].getVariables().getFromIndex(0)).setString(gdjs.evtTools.variable.getVariableString(runtimeScene.getVariables().getFromIndex(2).getChild(gdjs.randomInRange(0, 19))));
+    gdjs.Game_32windowCode.GDLabelObjects1[i].returnVariable(gdjs.Game_32windowCode.GDLabelObjects1[i].getVariables().getFromIndex(0)).setString(gdjs.evtTools.variable.getVariableString(runtimeScene.getVariables().getFromIndex(2).getChild(gdjs.randomInRange(0, 31))));
 }
 }{for(var i = 0, len = gdjs.Game_32windowCode.GDLabelObjects1.length ;i < len;++i) {
     gdjs.Game_32windowCode.GDLabelObjects1[i].setString((gdjs.RuntimeObject.getVariableString(gdjs.Game_32windowCode.GDLabelObjects1[i].getVariables().getFromIndex(0))));
@@ -579,7 +591,7 @@ gdjs.Game_32windowCode.conditionTrue_1.val = true && gdjs.Game_32windowCode.cond
 if (gdjs.Game_32windowCode.condition1IsTrue_0.val) {
 gdjs.copyArray(runtimeScene.getObjects("Label"), gdjs.Game_32windowCode.GDLabelObjects1);
 {for(var i = 0, len = gdjs.Game_32windowCode.GDLabelObjects1.length ;i < len;++i) {
-    gdjs.Game_32windowCode.GDLabelObjects1[i].returnVariable(gdjs.Game_32windowCode.GDLabelObjects1[i].getVariables().getFromIndex(0)).setString(gdjs.evtTools.variable.getVariableString(runtimeScene.getVariables().getFromIndex(2).getChild(gdjs.randomInRange(0, 19))));
+    gdjs.Game_32windowCode.GDLabelObjects1[i].returnVariable(gdjs.Game_32windowCode.GDLabelObjects1[i].getVariables().getFromIndex(0)).setString(gdjs.evtTools.variable.getVariableString(runtimeScene.getVariables().getFromIndex(2).getChild(gdjs.randomInRange(0, 31))));
 }
 }{for(var i = 0, len = gdjs.Game_32windowCode.GDLabelObjects1.length ;i < len;++i) {
     gdjs.Game_32windowCode.GDLabelObjects1[i].setString((gdjs.RuntimeObject.getVariableString(gdjs.Game_32windowCode.GDLabelObjects1[i].getVariables().getFromIndex(0))));
