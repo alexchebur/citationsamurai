@@ -324,7 +324,7 @@ gdjs.Game_32windowCode.conditionTrue_1.val = true && gdjs.Game_32windowCode.cond
 }if ( gdjs.Game_32windowCode.condition1IsTrue_0.val ) {
 {
 {gdjs.Game_32windowCode.conditionTrue_1 = gdjs.Game_32windowCode.condition2IsTrue_0;
-gdjs.Game_32windowCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(9415148);
+gdjs.Game_32windowCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(9185108);
 }
 }}
 }
